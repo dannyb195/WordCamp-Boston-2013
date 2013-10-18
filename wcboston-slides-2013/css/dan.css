@@ -1,0 +1,19 @@
+img.me {
+	float: left;
+	width: 300px;
+	height: auto;
+}
+ul {
+	float: left;
+}
+small {
+	width: 100%;
+	clear: both;
+}
+.left {
+	float: left;
+}
+.half-right {
+	float: right;
+	width: 50%;
+}
