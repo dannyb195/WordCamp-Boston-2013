@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.aac-wrap {
+	width:100%;
+}
+table.gaiasab {
+	width:100%;
+	display:none;
+}
+table.gaiasab th {
+	width:30%;
+}
+table.gaiasab td {
+	width:50%;
+}
+h2.gaiasab {
+	cursor:pointer;
+}
