@@ -3,8 +3,8 @@ Contributors: dan-gaia, grantlandram
 Donate link: http://www.gaiarendering.com/buy-me-a-beer
 Tags: Admin Menu, Customize Login Logo, Hide Admin Menu Items, Brand Admin, Branding, Remove Widgets
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.0.6
+Tested up to: 3.7
+Stable tag: 1.0.7
  
 Admin Cleaner allows you to hide admin menu items and restyle the login screen and admin menu colors
 
@@ -71,3 +71,7 @@ Yep. to do this simply make sure all options are set to 'Show' and fill out the 
 
 = 1.0.6 =
 *fixed header already sent
+
+= 1.0.7 =
+*10-25-13
+*added styling for postbox and wp-admin html / body background

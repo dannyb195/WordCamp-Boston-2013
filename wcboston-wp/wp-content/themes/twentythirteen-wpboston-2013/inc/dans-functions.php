@@ -1,5 +1,5 @@
 <?php
-include 'employees.php';
+//include 'employees.php';
 //START REGISTER CPT
 add_action( 'init', 'register_cpt_example_cpt' );
 
@@ -22,7 +22,7 @@ function register_cpt_example_cpt() {
 
 	$args = array( 
 		'labels'              => $labels,
-		'hierarchical'        => false,
+		//'hierarchical'        => false,
 		// 'description'         => 'description',
 		// 'taxonomies'          => array( 'category' ),
 		'public'              => true,
@@ -39,9 +39,7 @@ function register_cpt_example_cpt() {
 		'rewrite'             => true,
 		'capability_type'     => 'post', 
 		'supports'            => array( 
-			'title', 'editor', 'author', 'thumbnail', 
-			'custom-fields', 'trackbacks', 'comments', 
-			'revisions', 'page-attributes', 'post-formats'
+			'title', 'editor', 'author', 'thumbnail', 'revisions'
 			),
 		);
 
@@ -54,7 +52,7 @@ function register_cpt_example_cpt() {
 //START ADD META BOX
 add_action( 'add_meta_boxes', 'example_meta_box' );
 function example_meta_box() {
-	add_meta_box( 'example_id', 'TITLE', 'example_box', 'example_cpt', 'normal', 'high' );
+	add_meta_box( 'example_id', 'example meta box', 'example_box', 'example_cpt', 'normal', 'high' );
 }
 //END ADD META BOX
 function example_box( $post ) {

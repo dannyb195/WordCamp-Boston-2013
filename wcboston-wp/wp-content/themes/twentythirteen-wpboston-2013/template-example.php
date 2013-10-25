@@ -10,7 +10,7 @@ get_header(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div class="entry-content">
-					<?php the_title(); //the page title?>
+					<h1><?php the_title(); //the page title?></h1>
 					<?php the_content(); //the page content?>
 
 

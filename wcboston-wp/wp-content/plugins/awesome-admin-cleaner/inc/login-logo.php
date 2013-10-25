@@ -8,6 +8,16 @@ if (!empty($gaia_sab_logo)) {
 		background-position: top left !important;
 	}';
 };
+if (!empty($gaia_sab_options['admin_html_background'])) {
+	echo 'html.wp-toolbar, body.wp-admin {
+		background-color:' . $gaia_sab_options["admin_html_background"] . ' !important;
+	}';
+};
+if (!empty($gaia_sab_options['admin_postbox_background'])) {
+	echo 'div.postbox {
+		background-color:' . $gaia_sab_options["admin_postbox_background"] . ' !important;
+	}';
+};
 if (!empty($gaia_sab_options["admin_menu_back"])) {
 	echo '#adminmenuback, #adminmenuwrap {
 		background-color:'.$gaia_sab_options["admin_menu_back"].' !important;
