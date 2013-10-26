@@ -44,8 +44,6 @@ function register_cpt_employees() {
 
 add_action( 'add_meta_boxes', 'title_meta_box' );
 add_action( 'add_meta_boxes', 'phone_meta_box' );
-// add_action( 'add_meta_boxes', 'email_meta_box' );
-// add_action( 'add_meta_boxes', 'twitter_meta_box' );
 
 function title_meta_box() {
 	add_meta_box( 'title_id', 'Employee Title', 'title_box', 'employees', 'normal', 'high' );
@@ -95,8 +93,6 @@ function save_meta_details_employees() {
 	// Check for your post type
     if( $post->post_type == 'employees' ) {
         if( isset($_POST['title_text_box']) ) { update_post_meta( $post->ID, 'title_text_box', $_POST['title_text_box'] );}
-    }
-    if( $post->post_type == 'employees' ) {
         if( isset($_POST['phone_text_box']) ) { update_post_meta( $post->ID, 'phone_text_box', $_POST['phone_text_box'] );}
     }
 }

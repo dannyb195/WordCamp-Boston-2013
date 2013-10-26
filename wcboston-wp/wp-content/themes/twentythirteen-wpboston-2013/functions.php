@@ -1,5 +1,5 @@
 <?php
-include 'inc/dans-functions.php';
+//include 'inc/dans-functions.php';
 /**
  * Twenty Thirteen functions and definitions.
  *

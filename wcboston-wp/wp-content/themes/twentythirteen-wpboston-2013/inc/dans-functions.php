@@ -1,60 +1,58 @@
 <?php
 //include 'employees.php';
-//START REGISTER CPT
-add_action( 'init', 'register_cpt_example_cpt' );
 
-function register_cpt_example_cpt() {
+// add_action( 'init', 'register_cpt_example_cpt' );
 
-	$labels = array( 
-		'name'               => __( 'Example CPTs', 'wordcamp boston 2013' ),
-		'singular_name'      => __( 'Example CPT', 'wordcamp boston 2013' ),
-		'add_new'            => _x( 'Add New CPT', 'I am Meta Box', 'wordcamp boston 2013' ),
-		'add_new_item'       => __( 'Add New CPT', 'wordcamp boston 2013' ),
-		'edit_item'          => __( 'Edit CPT', 'wordcamp boston 2013' ),
-		'new_item'           => __( 'New CPT', 'wordcamp boston 2013' ),
-		'view_item'          => __( 'View CPT', 'wordcamp boston 2013' ),
-		'search_items'       => __( 'Search Example CPT', 'wordcamp boston 2013' ),
-		'not_found'          => __( 'No Example CPT found', 'wordcamp boston 2013' ),
-		'not_found_in_trash' => __( 'No Example CPT found in Trash', 'wordcamp boston 2013' ),
-		'parent_item_colon'  => __( 'Parent CPT:', 'wordcamp boston 2013' ),
-		'menu_name'          => __( 'Example CPT', 'wordcamp boston 2013' ),
-		);
+// function register_cpt_example_cpt() {
 
-	$args = array( 
-		'labels'              => $labels,
-		//'hierarchical'        => false,
-		// 'description'         => 'description',
-		// 'taxonomies'          => array( 'category' ),
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		// 'menu_position'       => 5,
-		//'menu_icon'         => '',
-		'show_in_nav_menus'   => true,
-		'publicly_queryable'  => true,
-		'exclude_from_search' => false,
-		'has_archive'         => true,
-		'query_var'           => true,
-		'can_export'          => true,
-		'rewrite'             => true,
-		'capability_type'     => 'post', 
-		'supports'            => array( 
-			'title', 'editor', 'author', 'thumbnail', 'revisions'
-			),
-		);
+// 	$labels = array( 
+// 		'name'               => __( 'Example CPTs', 'wordcamp boston 2013' ),
+// 		'singular_name'      => __( 'Example CPT', 'wordcamp boston 2013' ),
+// 		'add_new'            => _x( 'Add New CPT', 'I am Meta Box', 'wordcamp boston 2013' ),
+// 		'add_new_item'       => __( 'Add New CPT', 'wordcamp boston 2013' ),
+// 		'edit_item'          => __( 'Edit CPT', 'wordcamp boston 2013' ),
+// 		'new_item'           => __( 'New CPT', 'wordcamp boston 2013' ),
+// 		'view_item'          => __( 'View CPT', 'wordcamp boston 2013' ),
+// 		'search_items'       => __( 'Search Example CPT', 'wordcamp boston 2013' ),
+// 		'not_found'          => __( 'No Example CPT found', 'wordcamp boston 2013' ),
+// 		'not_found_in_trash' => __( 'No Example CPT found in Trash', 'wordcamp boston 2013' ),
+// 		'parent_item_colon'  => __( 'Parent CPT:', 'wordcamp boston 2013' ),
+// 		'menu_name'          => __( 'Example CPT', 'wordcamp boston 2013' ),
+// 		);
 
-	register_post_type( 'example_cpt', $args );
+// 	$args = array( 
+// 		'labels'              => $labels,
+// 		//'hierarchical'        => false,
+// 		// 'description'         => 'description',
+// 		// 'taxonomies'          => array( 'category' ),
+// 		'public'              => true,
+// 		'show_ui'             => true,
+// 		'show_in_menu'        => true,
+// 		// 'menu_position'       => 5,
+// 		//'menu_icon'         => '',
+// 		'show_in_nav_menus'   => true,
+// 		'publicly_queryable'  => true,
+// 		'exclude_from_search' => false,
+// 		'has_archive'         => true,
+// 		'query_var'           => true,
+// 		'can_export'          => true,
+// 		'rewrite'             => true,
+// 		'capability_type'     => 'post', 
+// 		'supports'            => array( 
+// 			'title', 'editor', 'author', 'thumbnail', 'revisions'
+// 			),
+// 		);
 
-}
-//END REGISTER CPT
+// 	register_post_type( 'example_cpt', $args );
+
+// }
 
 
-//START ADD META BOX
-add_action( 'add_meta_boxes', 'example_meta_box' );
-function example_meta_box() {
-	add_meta_box( 'example_id', 'example meta box', 'example_box', 'example_cpt', 'normal', 'high' );
-}
-//END ADD META BOX
+// add_action( 'add_meta_boxes', 'example_meta_box' );
+// function example_meta_box() {
+// 	add_meta_box( 'example_id', 'example meta box', 'example_box', 'example_cpt', 'normal', 'high' );
+//}
+
 function example_box( $post ) {
 	$values = get_post_custom( $post->ID );
 	$text = isset( $values['example_text'] ) ? esc_attr( $values['example_text'][0] ) : ”;
@@ -66,12 +64,12 @@ function example_box( $post ) {
 	<?php
 }
 
-//START ADD META BOX FOR WOO COMM
+
 // add_action( 'add_meta_boxes', 'wc_example_meta_box' );
 // function wc_example_meta_box() {
 // 	add_meta_box( 'wc_example_id', 'WC TITLE', 'wc_example_box', 'product', 'normal', 'high' );
 // }
-//END ADD META BOX FOR WOO COMM
+
 function wc_example_box( $post ) {
 	$values = get_post_custom( $post->ID );
 	$text = isset( $values['wc_text_box'] ) ? esc_attr( $values['wc_text_box'][0] ) : ”;
